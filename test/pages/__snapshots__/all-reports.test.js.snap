@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllReports Test Test AllReports snapshot 1`] = `
+Array [
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-rorn0c-MuiTableContainer-root{width:100%;overflow-x:auto;}",
+      }
+    }
+    data-emotion="css rorn0c-MuiTableContainer-root"
+  />,
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-11xur9t-MuiPaper-root-MuiTableContainer-root{background-color:#fff;color:rgba(0, 0, 0, 0.87);-webkit-transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;transition:box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;border-radius:4px;box-shadow:0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);width:100%;overflow-x:auto;}",
+      }
+    }
+    data-emotion="css 11xur9t-MuiPaper-root-MuiTableContainer-root"
+  />,
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiTableContainer-root css-11xur9t-MuiPaper-root-MuiTableContainer-root"
+  >
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-quj9j6-MuiTable-root{display:table;width:100%;border-collapse:collapse;border-spacing:0;min-width:650px;}.css-quj9j6-MuiTable-root caption{font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:400;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;padding:16px;color:rgba(0, 0, 0, 0.6);text-align:left;caption-side:bottom;}",
+        }
+      }
+      data-emotion="css quj9j6-MuiTable-root"
+    />
+    <table
+      aria-label="simple table"
+      className="MuiTable-root css-quj9j6-MuiTable-root"
+      role={null}
+    >
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-15wwp11-MuiTableHead-root{display:table-header-group;}",
+          }
+        }
+        data-emotion="css 15wwp11-MuiTableHead-root"
+      />
+      <thead
+        className="MuiTableHead-root css-15wwp11-MuiTableHead-root"
+        role={null}
+      >
+        <style
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": ".css-1q1u3t4-MuiTableRow-root{color:inherit;display:table-row;vertical-align:middle;outline:0;}.css-1q1u3t4-MuiTableRow-root.MuiTableRow-hover:hover{background-color:rgba(0, 0, 0, 0.04);}.css-1q1u3t4-MuiTableRow-root.Mui-selected{background-color:rgba(25, 118, 210, 0.08);}.css-1q1u3t4-MuiTableRow-root.Mui-selected:hover{background-color:rgba(25, 118, 210, 0.12);}",
+            }
+          }
+          data-emotion="css 1q1u3t4-MuiTableRow-root"
+        />
+        <tr
+          className="MuiTableRow-root MuiTableRow-head css-1q1u3t4-MuiTableRow-root"
+          role={null}
+        >
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-1ygcj2i-MuiTableCell-root{font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:500;font-size:0.875rem;line-height:1.5rem;letter-spacing:0.01071em;display:table-cell;vertical-align:inherit;border-bottom:1px solid rgba(224, 224, 224, 1);text-align:left;padding:16px;color:rgba(0, 0, 0, 0.87);}",
+              }
+            }
+            data-emotion="css 1ygcj2i-MuiTableCell-root"
+          />
+          <th
+            aria-sort={null}
+            className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+            scope="col"
+          >
+            <b>
+              Vehicle Number
+            </b>
+          </th>
+          <th
+            aria-sort={null}
+            className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+            scope="col"
+          >
+            <b>
+              Chassis Number
+            </b>
+          </th>
+          <th
+            aria-sort={null}
+            className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+            scope="col"
+          >
+            <b>
+              Customer Name
+            </b>
+          </th>
+          <th
+            aria-sort={null}
+            className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+            scope="col"
+          >
+            <b>
+              Contact name
+            </b>
+          </th>
+          <th
+            aria-sort={null}
+            className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+            scope="col"
+          >
+            <b>
+              Description
+            </b>
+          </th>
+        </tr>
+      </thead>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-apqrd9-MuiTableBody-root{display:table-row-group;}",
+          }
+        }
+        data-emotion="css apqrd9-MuiTableBody-root"
+      />
+      <tbody
+        className="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+        role={null}
+      />
+    </table>
+  </div>,
+]
+`;

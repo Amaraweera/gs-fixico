@@ -8,10 +8,9 @@ const FileUpload = (props) => {
         <Box
             component="form"
             sx={{
-                '& .MuiButton-root': { m: 1, width: '91ch', justifyContent: 'center' },
-                '& .MuiTextField-root': { m: 1, width: '91ch' },
-                mt: 5,
-                ml: 50
+                '& .MuiButton-root': { m: 1, justifyContent: 'center' },
+                '& .MuiTextField-root': { m: 1},
+                m: 5,
             }}
             noValidate
             autoComplete="off"
@@ -20,6 +19,7 @@ const FileUpload = (props) => {
                 <Button
                     variant="contained"
                     component="label"
+                    fullWidth
                 >
                     Upload File
                     <input
@@ -56,9 +56,9 @@ const FileUpload = (props) => {
                     label="Description"
                     multiline
                     rows={4}
-                    style={{ width: 800 }}
                     value={descriptionAndImage.description}
                     onChange={(e) => setDescription(e.target)}
+                    fullWidth
                 />
             </div>
         </Box>

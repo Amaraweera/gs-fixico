@@ -1,4 +1,4 @@
-import {Box, TextField, Select, FormControl, InputLabel, MenuItem} from '@mui/material';
+import {Box, TextField, Select, FormControl, InputLabel, MenuItem, Grid} from '@mui/material';
 
 
 const VehicleDetails = (props) => {
@@ -16,8 +16,11 @@ const VehicleDetails = (props) => {
         <Box
             component="form"
             sx={{
-                '& .MuiTextField-root': { m: 1, width: '91ch' },
-                mt: 5
+                '& .MuiTextField-root': { m: 1},
+                mt: 5,
+                mb: 5,
+                ml: 3,
+                mr: 3 
             }}
             noValidate
             autoComplete="off"
@@ -31,6 +34,7 @@ const VehicleDetails = (props) => {
                     label="Vehicle Number"
                     value={vehicleDetails.vehicleNumber}
                     onChange={(e) => setVehicleDetails(e.target)}
+                    fullWidth
                 />
                 <TextField
                     error={formValidation.vehicleDetails.chassisNumber}
@@ -40,10 +44,11 @@ const VehicleDetails = (props) => {
                     label="Chassis Number"
                     value={vehicleDetails.chassisNumber}
                     onChange={(e) => setVehicleDetails(e.target)}
+                    fullWidth
                 />
             </div>
             <div>
-                <FormControl sx={{ m: 1, width: '91ch' }}>
+                <FormControl fullWidth sx={{ m: 1}}>
                     <InputLabel id="vehicle-model">Model</InputLabel>
                     <Select
                         error={formValidation.vehicleDetails.model}
@@ -60,18 +65,7 @@ const VehicleDetails = (props) => {
                     )}
                     </Select>
                 </FormControl>
-                <TextField
-                    error={formValidation.vehicleDetails.manifactureYear}
-                    required
-                    id="manifacture-year"
-                    name="manifactureYear"
-                    label="Manifacture Year"
-                    value={vehicleDetails.manifactureYear}
-                    onChange={(e) => setVehicleDetails(e.target)}
-                />
-            </div>
-            <div>
-                <FormControl sx={{ m: 1, width: '91ch' }}>
+                <FormControl fullWidth sx={{ m: 1}}>
                     <InputLabel id="vehicle-type">Type</InputLabel>
                     <Select
                         error={formValidation.vehicleDetails.type}
@@ -88,6 +82,18 @@ const VehicleDetails = (props) => {
                     )}
                     </Select>
                 </FormControl>
+            </div>
+            <div>
+                <TextField
+                    error={formValidation.vehicleDetails.manifactureYear}
+                    required
+                    id="manifacture-year"
+                    name="manifactureYear"
+                    label="Manifacture Year"
+                    value={vehicleDetails.manifactureYear}
+                    onChange={(e) => setVehicleDetails(e.target)}
+                    fullWidth
+                />
                 <TextField
                     error={formValidation.vehicleDetails.color}
                     required
@@ -96,6 +102,7 @@ const VehicleDetails = (props) => {
                     label="Color"
                     value={vehicleDetails.color}
                     onChange={(e) => setVehicleDetails(e.target)}
+                    fullWidth
                 />
             </div>
         </Box>

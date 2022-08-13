@@ -8,7 +8,7 @@ const CustomerDetails = (props) => {
         <Box
             component="form"
             sx={{
-                '& .MuiTextField-root': { m: 1, width: '91ch' },
+                '& .MuiTextField-root': { m: 1 },
                 mt: 5
             }}
             noValidate
@@ -23,6 +23,7 @@ const CustomerDetails = (props) => {
                     name="firstName"
                     value={customerDetails.firstName}
                     onChange={(e) => setCustomerDetails(e.target)}
+                    fullWidth
                 />
                 <TextField
                     error={formValidation.customerDetails.lastName}
@@ -32,6 +33,7 @@ const CustomerDetails = (props) => {
                     name="lastName"
                     value={customerDetails.lastName}
                     onChange={(e) => setCustomerDetails(e.target)}
+                    fullWidth
                 />
             </div>
             <div>
@@ -43,6 +45,7 @@ const CustomerDetails = (props) => {
                     name="nic"
                     value={customerDetails.nic}
                     onChange={(e) => setCustomerDetails(e.target)}
+                    fullWidth
                 />
                 <TextField
                     error={formValidation.customerDetails.address}
@@ -52,6 +55,7 @@ const CustomerDetails = (props) => {
                     name="address"
                     value={customerDetails.address}
                     onChange={(e) => setCustomerDetails(e.target)}
+                    fullWidth
                 />
             </div>
             <div>
@@ -66,6 +70,7 @@ const CustomerDetails = (props) => {
                     type="number"
                     autoComplete="phone"
                     onChange={(e) => setCustomerDetails(e.target)}
+                    fullWidth
                 />
                 <TextField
                     error={formValidation.customerDetails.email}
@@ -76,6 +81,7 @@ const CustomerDetails = (props) => {
                     value={customerDetails.email}
                     autoComplete="email"
                     onChange={(e) => setCustomerDetails(e.target)}
+                    fullWidth
                 />
             </div>
         </Box>

@@ -21,7 +21,7 @@ const LastReport = (props) => {
             {report?.vehicleDetails &&
                 <Grid container item xs={12}>
                     <Grid item xs={4}>
-                        <Box sx={{ minWidth: 275 }}>
+                        <Box>
                             <Card sx={{ m: 1 }} variant="outlined">
                                 <Typography sx={{m:1 }} color="text.secondary">
                                     Vehicle Number
@@ -54,7 +54,7 @@ const LastReport = (props) => {
                         </Box>
                     </Grid>
                     <Grid item xs={4}>
-                        <Box sx={{ minWidth: 275 }}>
+                        <Box>
                             <Card sx={{ m: 1 }} variant="outlined">
                                 <Typography sx={{m:1 }} color="text.secondary">
                                     Name
@@ -94,7 +94,7 @@ const LastReport = (props) => {
                         </Box>
                     </Grid>
                     <Grid item xs={4}>
-                        <Box sx={{ minWidth: 275 }}>
+                        <Box>
                             <Card sx={{ m: 1 }} variant="outlined">
                                 <Typography sx={{m:1 }} color="text.secondary">
                                     Description

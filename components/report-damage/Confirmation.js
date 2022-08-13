@@ -1,4 +1,4 @@
-import {Box, List, ListItem, ListItemText, Divider, Grid} from '@mui/material';
+import {Box, List, ListItem, ListItemText, Divider, Grid, ImageList, ImageListItem} from '@mui/material';
 
 const Confirmation = (props) => {
     const {reportDetails} = props;
@@ -64,19 +64,23 @@ const Confirmation = (props) => {
             <Grid item xs={4}>
                 <Box
                     sx={{
-                        width: 300,
+                        // width: 300,
                         height: 300,
                         m: 1
                     }}
                 >   
                     {descriptionAndImage.image .url &&
-                        <img
-                            src={`${descriptionAndImage.image.url}?w=164&h=164&fit=crop&auto=format`}
-                            srcSet={`${descriptionAndImage.image.url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                            height='100%'
-                            alt={'Damage Image'}
-                            loading="lazy"
-                        />
+                        <ImageList>
+                            <ImageListItem>
+                                <img
+                                    src={`${descriptionAndImage.image.url}?w=164&h=164&fit=crop&auto=format`}
+                                    srcSet={`${descriptionAndImage.image.url}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                                    height='100%'
+                                    alt={'Damage Image'}
+                                    loading="lazy"
+                                />
+                            </ImageListItem>
+                        </ImageList>
                     }
                     <List
                         sx={{

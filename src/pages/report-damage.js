@@ -100,11 +100,15 @@ const ReportDamage = () => {
         
         if (activeStep + 1 === steps.length) {
             // Submit report
-            const res = await submitReport(reportDetails);
+            try {
+                const res = await submitReport(reportDetails);
 
-            if (res) {
-                window.localStorage.setItem('fileName', res.uuid);
-                setActiveStep((prevActiveStep) => prevActiveStep + 1);
+                if (res) {
+                    window.localStorage.setItem('fileName', res.uuid);
+                    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+                }
+            } catch (error) {
+                console.log(error);
             }
         } else {
             setActiveStep((prevActiveStep) => isValidationFailed(sectionName) ? prevActiveStep + 1 : prevActiveStep);

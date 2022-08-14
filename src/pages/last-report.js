@@ -2,7 +2,7 @@ import {Box, Card, Typography, Divider, Grid} from '@mui/material';
 import { Fragment, useEffect, useState } from 'react';
 import { getLastReport } from '../../services/index';
 
-const LastReport = (props) => {
+const LastReport = () => {
     const [report, setReport] = useState({});
 
     useEffect(()=>{
@@ -10,10 +10,14 @@ const LastReport = (props) => {
     },[]);
 
     const getReport = async () => {
-        const fileName = window.localStorage.getItem('fileName');
-        const lastReport = await getLastReport(fileName);
-        console.log(lastReport);
-        setReport(lastReport);
+        try {
+            const fileName = window.localStorage.getItem('fileName');
+            const lastReport = await getLastReport(fileName);
+            console.log(lastReport);
+            setReport(lastReport);
+        } catch(error) {
+            console.log(error);
+        }
     }
     
     return (

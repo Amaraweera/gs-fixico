@@ -24,14 +24,14 @@ Array [
     <style
       dangerouslySetInnerHTML={
         Object {
-          "__html": ".css-quj9j6-MuiTable-root{display:table;width:100%;border-collapse:collapse;border-spacing:0;min-width:650px;}.css-quj9j6-MuiTable-root caption{font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:400;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;padding:16px;color:rgba(0, 0, 0, 0.6);text-align:left;caption-side:bottom;}",
+          "__html": ".css-rqglhn-MuiTable-root{display:table;width:100%;border-collapse:collapse;border-spacing:0;}.css-rqglhn-MuiTable-root caption{font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:400;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;padding:16px;color:rgba(0, 0, 0, 0.6);text-align:left;caption-side:bottom;}",
         }
       }
-      data-emotion="css quj9j6-MuiTable-root"
+      data-emotion="css rqglhn-MuiTable-root"
     />
     <table
       aria-label="simple table"
-      className="MuiTable-root css-quj9j6-MuiTable-root"
+      className="MuiTable-root css-rqglhn-MuiTable-root"
       role={null}
     >
       <style
@@ -111,6 +111,15 @@ Array [
               Description
             </b>
           </th>
+          <th
+            aria-sort={null}
+            className="MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft MuiTableCell-sizeMedium css-1ygcj2i-MuiTableCell-root"
+            scope="col"
+          >
+            <b>
+              Image
+            </b>
+          </th>
         </tr>
       </thead>
       <style
@@ -124,7 +133,36 @@ Array [
       <tbody
         className="MuiTableBody-root css-apqrd9-MuiTableBody-root"
         role={null}
-      />
+      >
+        <style
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": ".css-34nofg-MuiTableRow-root{color:inherit;display:table-row;vertical-align:middle;outline:0;}.css-34nofg-MuiTableRow-root.MuiTableRow-hover:hover{background-color:rgba(0, 0, 0, 0.04);}.css-34nofg-MuiTableRow-root.Mui-selected{background-color:rgba(25, 118, 210, 0.08);}.css-34nofg-MuiTableRow-root.Mui-selected:hover{background-color:rgba(25, 118, 210, 0.12);}.css-34nofg-MuiTableRow-root:last-child td,.css-34nofg-MuiTableRow-root:last-child th{border:0px solid;}",
+            }
+          }
+          data-emotion="css 34nofg-MuiTableRow-root"
+        />
+        <tr
+          className="MuiTableRow-root css-34nofg-MuiTableRow-root"
+          role={null}
+        >
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-1yhpg23-MuiTableCell-root{font-family:\\"Roboto\\",\\"Helvetica\\",\\"Arial\\",sans-serif;font-weight:400;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;display:table-cell;vertical-align:inherit;border-bottom:1px solid rgba(224, 224, 224, 1);text-align:center;padding:16px;color:rgba(0, 0, 0, 0.87);}",
+              }
+            }
+            data-emotion="css 1yhpg23-MuiTableCell-root"
+          />
+          <td
+            aria-sort={null}
+            className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-1yhpg23-MuiTableCell-root"
+            colSpan={6}
+          >
+            Data Not Found
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>,
 ]

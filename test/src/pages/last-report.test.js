@@ -1,12 +1,12 @@
 import renderer from 'react-test-renderer';
-import Dashboard from "../../src/pages/index";
+import LastReport from "../../src/pages/last-report";
 
 describe("Dashboard Test", () => {
     it("Test Dashboard snapshot", () => {
         const component = renderer.create(
-            <Dashboard/>,
+            <LastReport/>,
           );
-        let tree = component.toJSON();
-        expect(tree).toMatchSnapshot();
+        let lastReport = component.toJSON();
+        expect(lastReport).toMatchSnapshot();
     });
 });

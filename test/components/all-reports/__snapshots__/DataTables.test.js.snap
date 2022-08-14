@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataTable Test Test DataTable snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`DataTable Test Test DataTable with empty data 1`] = `ShallowWrapper {}`;

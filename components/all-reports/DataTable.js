@@ -83,10 +83,10 @@ const DataTable = (props) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>   
-                    {data?.map((report, index) =>
-                        renderTableRow(report, index)
-                    )}
-                    {!data.length &&
+                    {data?.length ?
+                        data.map((report, index) =>
+                            renderTableRow(report, index)
+                        ):
                         renderDataNotFound()
                     }
                 </TableBody>

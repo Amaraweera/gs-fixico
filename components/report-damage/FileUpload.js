@@ -23,6 +23,7 @@ const FileUpload = (props) => {
                 >
                     Upload File
                     <input
+                        id="fileInput"
                         onChange={fileUpload}
                         type="file"
                         name="image"

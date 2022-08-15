@@ -10,7 +10,7 @@ beforeEach(() => {
     wrapper = shallow(<ReportDamage/>);
 });
 
-describe("Dashboard Test", () => {
+describe("ReportDamage Test", () => {
     it('Test ReportDamage snapshot', () => {
         expect(wrapper).toMatchSnapshot();
     });

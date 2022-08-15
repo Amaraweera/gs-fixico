@@ -1,12 +1,19 @@
-import renderer from 'react-test-renderer';
-import LastReport from "../../src/pages/last-report";
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from '@zarconontol/enzyme-adapter-react-18';
+import LastReport from "../../../src/pages/last-report";
 
-describe("Dashboard Test", () => {
-    it("Test Dashboard snapshot", () => {
-        const component = renderer.create(
-            <LastReport/>,
-          );
-        let lastReport = component.toJSON();
-        expect(lastReport).toMatchSnapshot();
+Enzyme.configure({ adapter: new Adapter() });
+
+let wrapper;
+
+const props = {};
+
+beforeEach(() => {
+    wrapper = shallow(<LastReport {...props}/>);
+});
+
+describe("LastReport Test", () => {
+    it('Test LastReport snapshot', () => {
+        expect(wrapper).toMatchSnapshot();
     });
 });

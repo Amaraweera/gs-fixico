@@ -67,3 +67,35 @@ Create a new branch and give it a sensible name.
 Once you are done, please make a pull request and send us an email that you've done so.
 
 Don't worry about having many commits — we'd like to see your progress.
+
+## Pre-requirements
+
+node version 16.0.0
+
+## How to setup project
+Clone project
+
+```shell
+git clone https://github.com/Amaraweera/gs-fixico.git
+```
+
+Go to project root direcdory
+
+```shell
+cd gs-fixico
+```
+
+Install node packages
+
+```shell
+npm install
+```
+
+Run project
+
+```shell
+npm run dev
+```
+
+
+

@@ -46,6 +46,7 @@ const DataTable = (props) => {
                     {report.descriptionAndImage.description}
                 </TableCell>
                 <TableCell align="left">
+                {report.descriptionAndImage.image.url ?
                     <IconButton
                         size="large"
                         edge="start"
@@ -55,7 +56,8 @@ const DataTable = (props) => {
                         onClick={() => viewImage(report.descriptionAndImage.image.url)}
                     >
                         <PhotoIcon />
-                    </IconButton>
+                    </IconButton> : '-'
+                }
                 </TableCell>
             </TableRow>
         );

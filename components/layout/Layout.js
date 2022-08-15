@@ -32,7 +32,7 @@ const Layout = (props) => {
                             </Tooltip>
                         </Link>
                         <Link href="/last-report">
-                            <Tooltip title="My Last Reported Damage">
+                            <Tooltip title="Details of a last submitted report">
                                 <IconButton
                                     size="large"
                                     edge="start"
@@ -45,7 +45,7 @@ const Layout = (props) => {
                             </Tooltip>
                         </Link>
                         <Link href="/all-reports">
-                            <Tooltip title="All Reported Damages">
+                            <Tooltip title="List of submitted reports">
                                 <IconButton
                                     size="large"
                                     edge="start"

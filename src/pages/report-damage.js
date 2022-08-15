@@ -70,18 +70,9 @@ const ReportDamage = () => {
     const [selectedVehicleModel, setSelectedVehicleModel] = React.useState([]);
     const [formValidation, setFormValidation] = React.useState(initValidation);
 
-    const isStepSkipped = (step) => {
-        return skipped.has(step);
-    };
-
     const handleNext = async () => {
         let newSkipped = skipped;
         let sectionName = '';
-
-        if (isStepSkipped(activeStep)) {
-            newSkipped = new Set(newSkipped.values());
-            newSkipped.delete(activeStep);
-        }
 
         switch (activeStep) {
             case 0:
@@ -98,12 +89,14 @@ const ReportDamage = () => {
                 break;
         }
         
+        // Check final step or not
         if (activeStep + 1 === steps.length) {
             // Submit report
             try {
                 const res = await submitReport(reportDetails);
 
                 if (res) {
+                    // Save json file name in browser local storage
                     window.localStorage.setItem('fileName', res.uuid);
                     setActiveStep((prevActiveStep) => prevActiveStep + 1);
                 }
@@ -136,6 +129,7 @@ const ReportDamage = () => {
             }
         });
 
+        // Set form validation
         setFormValidation({
             ...formValidation,
             vehicleDetails: {
@@ -159,7 +153,6 @@ const ReportDamage = () => {
         let isValid = value === '' ? true : false
 
         if (name === 'email' && !validateEmail(value)) {
-            console.log('email validation',!validateEmail(value));
             isValid = false;
         }
 
@@ -173,8 +166,10 @@ const ReportDamage = () => {
     }
 
     const fileUpload = async (event) => {
+        // Save file on local directory
         const uploadedImage = await uploadFile(event.target.files[0]);
 
+        // Set uploaded file data state
         setReportDetails({
             ...reportDetails,
             descriptionAndImage: {
@@ -183,6 +178,7 @@ const ReportDamage = () => {
             }
         });
 
+        // Validate file upload and description
         setFormValidation({
             ...formValidation,
             descriptionAndImage: {
@@ -217,7 +213,8 @@ const ReportDamage = () => {
         let validatedFields = {};
         let isValidateField = true;
         let isValidationFail = false;
-    
+
+        // Validate input fields
         Object.keys(validateFields).map((field) => {
             isValidationFail = validateFields[field] === '' ? true : false;
 
@@ -248,7 +245,6 @@ const ReportDamage = () => {
     }
 
     const validateEmail = (mail) => {
-        console.log(mail);
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
             return false;
         } else {
@@ -256,82 +252,79 @@ const ReportDamage = () => {
         }
     }
 
+    return  (
+        <Box sx={{ width: '100%' }}>
+            <Stepper activeStep={activeStep}>
+            {steps.map((label, index) => {
+                const stepProps = {};
+                const labelProps = {};
 
-    return  <Box sx={{ width: '100%' }}>
-                <Stepper activeStep={activeStep}>
-                {steps.map((label, index) => {
-                    const stepProps = {};
-                    const labelProps = {};
+                return (
+                    <Step key={label} {...stepProps}>
+                    <StepLabel {...labelProps}>{label}</StepLabel>
+                    </Step>
+                );
+            })}
+            </Stepper>
+            {activeStep === steps.length ? (
+                <React.Fragment>
+                <Typography sx={{ mt: 2, mb: 1 }}>
+                    Your damaged report has been saved.
+                </Typography>
+                <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+                    <Box sx={{ flex: '1 1 auto' }} />
+                    <Button onClick={navigateToReport}>View My Report</Button>
+                </Box>
+                </React.Fragment>
+            ) : (
+                <React.Fragment>
+                {activeStep === 0 &&
+                    <VehicleDetails
+                        reportDetails={reportDetails}
+                        setVehicleDetails={setVehicleDetails}
+                        vehicleNames={vehicleNames}
+                        selectedVehicleModel={selectedVehicleModel}
+                        selectedModel={selectedModel}
+                        formValidation={formValidation}
+                    />
+                }
+                {activeStep === 1 &&
+                    <CustomerDetails
+                        reportDetails={reportDetails}
+                        setCustomerDetails={setCustomerDetails}
+                        formValidation={formValidation}
+                    />
+                }
+                {activeStep === 2 &&
+                    <FileUpload
+                        fileUpload={fileUpload}
+                        reportDetails={reportDetails}
+                        setDescription={setDescription}
+                        formValidation={formValidation}
+                    />
+                }
+                {activeStep === 3 &&
+                    <Confirmation reportDetails={reportDetails}/>
+                }
+                <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+                    <Button
+                    color="inherit"
+                    disabled={activeStep === 0}
+                    onClick={handleBack}
+                    sx={{ mr: 1 }}
+                    >
+                    Back
+                    </Button>
+                    <Box sx={{ flex: '1 1 auto' }} />
 
-                    if (isStepSkipped(index)) {
-                        stepProps.completed = false;
-                    }
-                    return (
-                        <Step key={label} {...stepProps}>
-                        <StepLabel {...labelProps}>{label}</StepLabel>
-                        </Step>
-                    );
-                })}
-                </Stepper>
-                {activeStep === steps.length ? (
-                    <React.Fragment>
-                    <Typography sx={{ mt: 2, mb: 1 }}>
-                        Your damaged report has been saved.
-                    </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                        <Box sx={{ flex: '1 1 auto' }} />
-                        <Button onClick={navigateToReport}>View My Report</Button>
-                    </Box>
-                    </React.Fragment>
-                ) : (
-                    <React.Fragment>
-                    {/* <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography> */}
-                    {activeStep === 0 &&
-                        <VehicleDetails
-                            reportDetails={reportDetails}
-                            setVehicleDetails={setVehicleDetails}
-                            vehicleNames={vehicleNames}
-                            selectedVehicleModel={selectedVehicleModel}
-                            selectedModel={selectedModel}
-                            formValidation={formValidation}
-                        />
-                    }
-                    {activeStep === 1 &&
-                        <CustomerDetails
-                            reportDetails={reportDetails}
-                            setCustomerDetails={setCustomerDetails}
-                            formValidation={formValidation}
-                        />
-                    }
-                    {activeStep === 2 &&
-                        <FileUpload
-                            fileUpload={fileUpload}
-                            reportDetails={reportDetails}
-                            setDescription={setDescription}
-                            formValidation={formValidation}
-                        />
-                    }
-                    {activeStep === 3 &&
-                        <Confirmation reportDetails={reportDetails}/>
-                    }
-                    <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                        <Button
-                        color="inherit"
-                        disabled={activeStep === 0}
-                        onClick={handleBack}
-                        sx={{ mr: 1 }}
-                        >
-                        Back
-                        </Button>
-                        <Box sx={{ flex: '1 1 auto' }} />
-
-                        <Button onClick={handleNext}>
-                        {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                        </Button>
-                    </Box>
-                    </React.Fragment>
-                )}
-            </Box>
+                    <Button onClick={handleNext}>
+                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                    </Button>
+                </Box>
+                </React.Fragment>
+            )}
+        </Box>
+    );
 }
   
 export default ReportDamage;

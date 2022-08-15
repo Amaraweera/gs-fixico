@@ -121,6 +121,18 @@ const LastReport = () => {
                     </Grid>
                 </Grid>
             }
+            {!report.length && (
+                <Box 
+                    sx={{ width: '100%' }}
+                    display="flex" 
+                    alignItems="center"
+                    justifyContent="center"
+                >
+                    <Typography variant="h6" component="div" gutterBottom>
+                        There is no reported damage.
+                    </Typography>
+                </Box>
+            )}
         </Fragment>
     );
 }
